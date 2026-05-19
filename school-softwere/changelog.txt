@@ -1,0 +1,17 @@
+== School Softwere - Changelog ==
+
+= 1.0.0 (Initial release) =
+* Multi-school management
+* Students, Staff, Classes, Sections, Subjects, Routines
+* Sessions, Categories, Settings
+* Fees, Invoices, Payments, Concessions
+* Income & Expense tracking
+* Student & Staff Attendance
+* Examinations, Results, Admit Cards
+* Library, Transport, Hostel
+* Notices, Events, Homework, Study Materials
+* Lectures, Live Meetings
+* Tickets, Leaves, Logs
+* Setup Wizard
+* Frontend shortcodes & REST API
+* Custom modern admin UI

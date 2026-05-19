@@ -1,0 +1,43 @@
+/*!
+ * School Softwere - Print stylesheet
+ */
+* { box-sizing: border-box; }
+body { font-family: 'Inter', Arial, sans-serif; color: #1E293B; margin: 0; padding: 0; background: #fff; }
+.ss-print-wrap { max-width: 800px; margin: 0 auto; padding: 24px; }
+.ss-print-header { display: flex; align-items: center; gap: 16px; border-bottom: 2px solid #4F46E5; padding-bottom: 12px; margin-bottom: 18px; }
+.ss-print-header img { height: 64px; }
+.ss-print-school-name { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 24px; color: #1E1B4B; margin: 0; }
+.ss-print-school-meta { color: #64748B; font-size: 12px; margin: 2px 0 0; }
+.ss-print-title { font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 18px; text-align: center; margin: 16px 0; padding: 8px 0; background: #EEF2FF; color: #4F46E5; border-radius: 6px; }
+.ss-print-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.ss-print-table th, .ss-print-table td { border: 1px solid #E0E7FF; padding: 8px 10px; text-align: left; }
+.ss-print-table th { background: #F8FAFF; font-weight: 600; }
+.ss-print-row { display: flex; gap: 12px; margin-bottom: 8px; }
+.ss-print-row .label { font-weight: 600; min-width: 140px; color: #475569; }
+.ss-print-actions { text-align: right; margin: 12px 0; }
+.ss-print-actions .btn { background: #4F46E5; color: #fff; border: 0; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 14px; }
+
+/* ID card style */
+.ss-id-card { width: 86mm; height: 54mm; border: 1px solid #E0E7FF; border-radius: 12px; padding: 10px; display: inline-block; margin: 6px; vertical-align: top; background: linear-gradient(135deg, #EEF2FF, #fff); }
+.ss-id-card .head { background: #4F46E5; color: #fff; margin: -10px -10px 8px; padding: 6px 10px; border-radius: 12px 12px 0 0; font-weight: 700; font-family: 'Nunito', sans-serif; font-size: 13px; }
+.ss-id-card .body { display: flex; gap: 8px; }
+.ss-id-card .photo { width: 60px; height: 70px; background: #fff; border: 1px solid #E0E7FF; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #94A3B8; font-size: 11px; }
+.ss-id-card .info { flex: 1; font-size: 10px; line-height: 1.4; }
+.ss-id-card .info b { display: block; font-size: 12px; color: #1E1B4B; }
+
+/* QR placeholder */
+.ss-qr { width: 56px; height: 56px; border: 2px dashed #E0E7FF; display: inline-flex; align-items: center; justify-content: center; color: #94A3B8; font-size: 9px; }
+
+/* Watermark */
+.ss-watermark::before {
+    content: 'SCHOOL SOFTWERE'; position: fixed; top: 50%; left: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg);
+    font-size: 96px; color: rgba(79, 70, 229, .08); font-weight: 800;
+    pointer-events: none; z-index: -1;
+}
+
+@media print {
+    .ss-print-actions { display: none; }
+    body { background: #fff; }
+    .ss-print-wrap { padding: 0; max-width: 100%; }
+}
