@@ -1,0 +1,25 @@
+/*!
+ * School Softwere - Dark mode
+ */
+body.ss-app.ss-theme-dark {
+    --ss-surface:   #0F172A;
+    --ss-surface-2: #1E293B;
+    --ss-border:    #334155;
+    --ss-text:      #F1F5F9;
+    --ss-text-muted:#94A3B8;
+    background: #0B1120;
+}
+body.ss-app.ss-theme-dark .ss-card,
+body.ss-app.ss-theme-dark .ss-stat-card,
+body.ss-app.ss-theme-dark .ss-quick-action,
+body.ss-app.ss-theme-dark .ss-header,
+body.ss-app.ss-theme-dark .ss-table { background: #0F172A; color: var(--ss-text); }
+body.ss-app.ss-theme-dark .ss-table thead th { background: #1E293B; }
+body.ss-app.ss-theme-dark .ss-page,
+body.ss-app.ss-theme-dark .ss-school-pill,
+body.ss-app.ss-theme-dark .ss-session-pill,
+body.ss-app.ss-theme-dark .ss-quick-stat,
+body.ss-app.ss-theme-dark .ss-bell { background: #1E293B; color: var(--ss-text); }
+body.ss-app.ss-theme-dark .ss-field input,
+body.ss-app.ss-theme-dark .ss-field select,
+body.ss-app.ss-theme-dark .ss-field textarea { background: #1E293B; color: var(--ss-text); border-color: var(--ss-border); }

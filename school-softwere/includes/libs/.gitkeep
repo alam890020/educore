@@ -1,0 +1,2 @@
+Place 3rd-party PHP libraries here (TCPDF, PhpSpreadsheet, phpqrcode).
+Currently the plugin uses CDN-loaded JS libraries and native PHP fputcsv for export.

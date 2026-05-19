@@ -1,0 +1,27 @@
+/*!
+ * School Softwere - Public (frontend) styles
+ */
+.ss-public {
+    --ss-primary: #4F46E5;
+    --ss-border: #E0E7FF;
+    --ss-text: #1E293B;
+    --ss-muted: #64748B;
+    font-family: 'Inter', system-ui, sans-serif; color: var(--ss-text);
+}
+.ss-public * { box-sizing: border-box; }
+.ss-public-card { background: #fff; border: 1px solid var(--ss-border); border-radius: 12px; padding: 20px; box-shadow: 0 4px 12px rgba(15,23,42,.04); margin-bottom: 16px; }
+.ss-public-card h3 { font-family: 'Nunito', sans-serif; font-weight: 700; margin: 0 0 12px; color: var(--ss-primary); }
+.ss-public-form .field { margin-bottom: 12px; display: flex; flex-direction: column; }
+.ss-public-form label { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+.ss-public-form input { padding: 10px 12px; border: 1px solid var(--ss-border); border-radius: 8px; font-size: 14px; }
+.ss-public-form input:focus { border-color: var(--ss-primary); outline: 0; box-shadow: 0 0 0 3px rgba(79,70,229,.12); }
+.ss-public-btn { background: var(--ss-primary); color: #fff; border: 0; padding: 10px 18px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 14px; }
+.ss-public-btn:hover { background: #3730A3; }
+.ss-public-list { list-style: none; margin: 0; padding: 0; }
+.ss-public-list li { padding: 10px 0; border-bottom: 1px solid var(--ss-border); display: flex; align-items: center; gap: 8px; }
+.ss-public-list li:last-child { border-bottom: 0; }
+.ss-public-list .meta { color: var(--ss-muted); font-size: 12px; }
+.ss-public-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.ss-public-tile { background: linear-gradient(135deg, #EEF2FF, #fff); border: 1px solid var(--ss-border); border-radius: 12px; padding: 16px; }
+.ss-public-tile .label { color: var(--ss-muted); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+.ss-public-tile .value { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 24px; color: var(--ss-primary); margin-top: 6px; }
