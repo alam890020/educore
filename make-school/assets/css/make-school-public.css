@@ -1,0 +1,31 @@
+/**
+ * MAKE SCHOOL - Public Frontend Styles
+ * @package Make_School
+ * @since 1.0.0
+ */
+
+/* Reset box-sizing for plugin elements */
+.ms-admission-form-wrapper *,
+.ms-student-portal *,
+.ms-teacher-portal * {
+    box-sizing: border-box;
+}
+
+/* Responsive grid adjustments */
+@media (max-width: 768px) {
+    .ms-admission-form-wrapper div[style*="grid-template-columns:1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+    }
+    .ms-teacher-portal div[style*="grid-template-columns:1fr 1fr auto"] {
+        grid-template-columns: 1fr !important;
+    }
+    .ms-student-portal div[style*="grid-template-columns:repeat"] {
+        grid-template-columns: 1fr 1fr !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .ms-student-portal div[style*="grid-template-columns:repeat"] {
+        grid-template-columns: 1fr !important;
+    }
+}
