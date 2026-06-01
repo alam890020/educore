@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduCore — Admin Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/preview-styles.css">
+<style>
+  :root{
+    --role-color:#4f8ef7;
+    --role-glow:rgba(79,142,247,.15);
+    --role-shadow:rgba(79,142,247,.4);
+  }
+  .sidebar-logo .mark{background:linear-gradient(135deg,#4f8ef7,#6366f1)}
+  .topbar-avatar{background:linear-gradient(135deg,#4f8ef7,#6366f1)}
+</style>
+</head>
+<body>
+<a href="index.html" class="back-link">← All Previews</a>
+
+<div class="dashboard-page">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">
+        <div class="mark">E</div>
+        <div class="name">Edu<span>Core</span></div>
+      </div>
+      <div class="sidebar-user">
+        <div class="user-name">Mr. Robert Wilson</div>
+        <div class="user-role">School Administrator</div>
+        <div class="user-school">Green Valley International</div>
+      </div>
+    </div>
+    
+    <nav class="sidebar-nav">
+      <div class="nav-section">
+        <div class="nav-section-title">Main</div>
+        <a class="nav-item active"><span class="nav-icon">📊</span> Dashboard</a>
+        <a class="nav-item"><span class="nav-icon">👨‍🎓</span> Students <span class="nav-badge badge-blue">1,247</span></a>
+        <a class="nav-item"><span class="nav-icon">👨‍🏫</span> Teachers <span class="nav-badge badge-green">86</span></a>
+        <a class="nav-item"><span class="nav-icon">👥</span> Staff</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-title">Academics</div>
+        <a class="nav-item"><span class="nav-icon">📚</span> Classes</a>
+        <a class="nav-item"><span class="nav-icon">📝</span> Examinations</a>
+        <a class="nav-item"><span class="nav-icon">📋</span> Timetable</a>
+        <a class="nav-item"><span class="nav-icon">📖</span> Subjects</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-title">Finance</div>
+        <a class="nav-item"><span class="nav-icon">💰</span> Fee Management <span class="nav-badge badge-red">12</span></a>
+        <a class="nav-item"><span class="nav-icon">📄</span> Invoices</a>
+        <a class="nav-item"><span class="nav-icon">📈</span> Reports</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-title">Management</div>
+        <a class="nav-item"><span class="nav-icon">🚌</span> Transport</a>
+        <a class="nav-item"><span class="nav-icon">🏠</span> Hostel</a>
+        <a class="nav-item"><span class="nav-icon">📢</span> Notices</a>
+        <a class="nav-item"><span class="nav-icon">⚙️</span> Settings</a>
+      </div>
+    </nav>
+    
+    <div class="sidebar-footer">
+      <button class="logout-btn" onclick="window.location.href='admin-login.html'">
+        <span>⏻</span> Sign Out
+      </button>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-content">
+    <div class="topbar">
+      <div class="topbar-title">Admin Dashboard</div>
+      <div class="topbar-right">
+        <div class="topbar-btn">🔔<span class="notif-dot"></span></div>
+        <div class="topbar-btn">💬</div>
+        <div class="topbar-avatar">RW</div>
+      </div>
+    </div>
+
+    <div class="content fade-in">
+      <!-- Stats -->
+      <div class="stats-grid">
+        <div class="stat-card blue">
+          <div class="stat-icon">👨‍🎓</div>
+          <div class="stat-label">Total Students</div>
+          <div class="stat-value blue">1,247</div>
+          <div class="stat-sub">+23 this month</div>
+        </div>
+        <div class="stat-card green">
+          <div class="stat-icon">👨‍🏫</div>
+          <div class="stat-label">Total Teachers</div>
+          <div class="stat-value green">86</div>
+          <div class="stat-sub">4 on leave today</div>
+        </div>
+        <div class="stat-card gold">
+          <div class="stat-icon">💰</div>
+          <div class="stat-label">Fee Collected (MTD)</div>
+          <div class="stat-value gold">$48,320</div>
+          <div class="stat-sub">72% of target</div>
+        </div>
+        <div class="stat-card red">
+          <div class="stat-icon">⚠️</div>
+          <div class="stat-label">Pending Dues</div>
+          <div class="stat-value red">$12,840</div>
+          <div class="stat-sub">34 students</div>
+        </div>
+        <div class="stat-card purple">
+          <div class="stat-icon">🏫</div>
+          <div class="stat-label">Total Classes</div>
+          <div class="stat-value purple">42</div>
+          <div class="stat-sub">12 sections</div>
+        </div>
+      </div>
+
+      <!-- Grid -->
+      <div class="grid-2">
+        <!-- Recent Activity -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Recent Activity</div>
+            <span class="badge badge-blue">12 new</span>
+          </div>
+          <div class="card-body">
+            <ul class="activity-list">
+              <li class="activity-item">
+                <div class="activity-dot" style="background:var(--green)"></div>
+                <div class="activity-content">
+                  <div class="activity-text">New student admission: <strong>Priya Sharma</strong> - Class 10A</div>
+                  <div class="activity-time">2 minutes ago</div>
+                </div>
+              </li>
+              <li class="activity-item">
+                <div class="activity-dot" style="background:var(--accent)"></div>
+                <div class="activity-content">
+                  <div class="activity-text">Fee payment received from <strong>Rahul Verma</strong> - $450</div>
+                  <div class="activity-time">15 minutes ago</div>
+                </div>
+              </li>
+              <li class="activity-item">
+                <div class="activity-dot" style="background:var(--gold)"></div>
+                <div class="activity-content">
+                  <div class="activity-text">Leave request from <strong>Mrs. Anita Desai</strong> - 3 days</div>
+                  <div class="activity-time">1 hour ago</div>
+                </div>
+              </li>
+              <li class="activity-item">
+                <div class="activity-dot" style="background:var(--purple)"></div>
+                <div class="activity-content">
+                  <div class="activity-text">Exam schedule published for <strong>Mid-Term 2024</strong></div>
+                  <div class="activity-time">3 hours ago</div>
+                </div>
+              </li>
+              <li class="activity-item">
+                <div class="activity-dot" style="background:var(--red)"></div>
+                <div class="activity-content">
+                  <div class="activity-text">Transport complaint raised by parent of <strong>Amit Kumar</strong></div>
+                  <div class="activity-time">5 hours ago</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Quick Actions</div>
+          </div>
+          <div class="card-body">
+            <div class="quick-actions">
+              <div class="quick-action">
+                <div class="quick-action-icon">➕</div>
+                <div class="quick-action-label">Add Student</div>
+              </div>
+              <div class="quick-action">
+                <div class="quick-action-icon">👨‍🏫</div>
+                <div class="quick-action-label">Add Teacher</div>
+              </div>
+              <div class="quick-action">
+                <div class="quick-action-icon">💳</div>
+                <div class="quick-action-label">Collect Fee</div>
+              </div>
+              <div class="quick-action">
+                <div class="quick-action-icon">📢</div>
+                <div class="quick-action-label">Send Notice</div>
+              </div>
+              <div class="quick-action">
+                <div class="quick-action-icon">📝</div>
+                <div class="quick-action-label">Create Exam</div>
+              </div>
+              <div class="quick-action">
+                <div class="quick-action-icon">📊</div>
+                <div class="quick-action-label">View Reports</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fee Collection & Attendance -->
+      <div class="grid-2" style="margin-top:16px">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Fee Collection by Class</div>
+            <span class="badge badge-gold">This Month</span>
+          </div>
+          <div class="card-body">
+            <div style="margin-bottom:14px">
+              <div style="display:flex;justify-content:space-between;margin-bottom:5px;font-size:13px">
+                <span>Class 10</span><span style="color:var(--green)">92%</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width:92%;background:var(--green)"></div></div>
+            </div>
+            <div style="margin-bottom:14px">
+              <div style="display:flex;justify-content:space-between;margin-bottom:5px;font-size:13px">
+                <span>Class 9</span><span style="color:var(--accent)">78%</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width:78%;background:var(--accent)"></div></div>
+            </div>
+            <div style="margin-bottom:14px">
+              <div style="display:flex;justify-content:space-between;margin-bottom:5px;font-size:13px">
+                <span>Class 8</span><span style="color:var(--gold)">65%</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width:65%;background:var(--gold)"></div></div>
+            </div>
+            <div style="margin-bottom:14px">
+              <div style="display:flex;justify-content:space-between;margin-bottom:5px;font-size:13px">
+                <span>Class 7</span><span style="color:var(--gold)">58%</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width:58%;background:var(--gold)"></div></div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:5px;font-size:13px">
+                <span>Class 6</span><span style="color:var(--red)">41%</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width:41%;background:var(--red)"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Today's Attendance Overview</div>
+            <span class="badge badge-green">Live</span>
+          </div>
+          <div class="card-body">
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Class</th><th>Present</th><th>Absent</th><th>Rate</th></tr></thead>
+                <tbody>
+                  <tr><td>Class 10A</td><td style="color:var(--green)">38</td><td style="color:var(--red)">2</td><td><span class="badge badge-green">95%</span></td></tr>
+                  <tr><td>Class 10B</td><td style="color:var(--green)">35</td><td style="color:var(--red)">5</td><td><span class="badge badge-green">88%</span></td></tr>
+                  <tr><td>Class 9A</td><td style="color:var(--green)">40</td><td style="color:var(--red)">0</td><td><span class="badge badge-green">100%</span></td></tr>
+                  <tr><td>Class 9B</td><td style="color:var(--green)">33</td><td style="color:var(--red)">7</td><td><span class="badge badge-gold">83%</span></td></tr>
+                  <tr><td>Class 8A</td><td style="color:var(--green)">36</td><td style="color:var(--red)">4</td><td><span class="badge badge-green">90%</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Upcoming Events -->
+      <div class="card" style="margin-top:16px">
+        <div class="card-header">
+          <div class="card-title">Upcoming Events & Deadlines</div>
+        </div>
+        <div class="card-body">
+          <div class="schedule-item">
+            <div class="schedule-time">Jun 05</div>
+            <div class="schedule-info">
+              <div class="schedule-subject">Mid-Term Examination Starts</div>
+              <div class="schedule-detail">All classes • Exam Hall A & B</div>
+            </div>
+            <span class="badge badge-red">3 days</span>
+          </div>
+          <div class="schedule-item">
+            <div class="schedule-time">Jun 10</div>
+            <div class="schedule-info">
+              <div class="schedule-subject">Parent-Teacher Meeting</div>
+              <div class="schedule-detail">Class 10 • School Auditorium</div>
+            </div>
+            <span class="badge badge-gold">8 days</span>
+          </div>
+          <div class="schedule-item">
+            <div class="schedule-time">Jun 15</div>
+            <div class="schedule-info">
+              <div class="schedule-subject">Fee Submission Deadline</div>
+              <div class="schedule-detail">All classes • Quarter 2</div>
+            </div>
+            <span class="badge badge-blue">13 days</span>
+          </div>
+          <div class="schedule-item">
+            <div class="schedule-time">Jun 20</div>
+            <div class="schedule-info">
+              <div class="schedule-subject">Annual Sports Day</div>
+              <div class="schedule-detail">Full school • Sports Ground</div>
+            </div>
+            <span class="badge badge-purple">18 days</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+</body>
+</html>

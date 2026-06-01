@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduCore — Admin Login</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/preview-styles.css">
+<style>
+  :root{
+    --role-color:#4f8ef7;
+    --role-glow:rgba(79,142,247,.15);
+    --role-shadow:rgba(79,142,247,.4);
+  }
+  .logo-mark{background:linear-gradient(135deg,#4f8ef7,#6366f1)}
+  .login-btn{background:linear-gradient(135deg,#4f8ef7,#6366f1)}
+  .role-badge{background:rgba(79,142,247,.12);color:var(--accent);border:1px solid rgba(79,142,247,.2)}
+</style>
+</head>
+<body>
+<a href="index.html" class="back-link">← All Previews</a>
+
+<div class="login-page">
+  <div class="login-bg"></div>
+  <div class="login-grid"></div>
+  
+  <div class="login-container fade-in">
+    <div class="login-logo">
+      <div class="logo-mark">E</div>
+      <div class="logo-text">Edu<span>Core</span></div>
+    </div>
+    
+    <div class="login-card">
+      <span class="role-badge">🛡️ Administrator Portal</span>
+      <h2>Admin Sign In</h2>
+      <p class="subtitle">School Management & Administration</p>
+      
+      <div class="field-group">
+        <label>Admin Email / Username</label>
+        <input type="email" placeholder="admin@school.educore.io">
+      </div>
+      
+      <div class="field-group">
+        <label>Password</label>
+        <input type="password" placeholder="Enter your password">
+      </div>
+      
+      <button class="login-btn" onclick="window.location.href='admin-dashboard.html'">Sign In as Admin →</button>
+      
+      <div class="login-extras">
+        <a href="#">Forgot Password?</a>
+        <span>Need help? Contact IT</span>
+      </div>
+      
+      <div class="demo-credentials">
+        <div class="demo-title">Demo Credentials</div>
+        <div class="demo-box">
+          <div class="demo-row">
+            <span class="demo-key">Email</span>
+            <span class="demo-val">admin@greenvalley.edu</span>
+          </div>
+          <div class="demo-row">
+            <span class="demo-key">Password</span>
+            <span class="demo-val">admin@2024</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="login-footer">
+      Powered by <a href="#">EduCore</a> School Management System
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduCore — Staff Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/preview-styles.css">
+<style>
+  :root{
+    --role-color:#f59e0b;
+    --role-glow:rgba(245,158,11,.15);
+    --role-shadow:rgba(245,158,11,.4);
+  }
+  .sidebar-logo .mark{background:linear-gradient(135deg,#f59e0b,#f97316)}
+  .topbar-avatar{background:linear-gradient(135deg,#f59e0b,#f97316)}
+  .nav-item.active{background:rgba(245,158,11,.12);color:var(--gold)}
+  .nav-item.active::before{background:var(--gold)}
+</style>
+</head>
+<body>
+<a href="index.html" class="back-link">← All Previews</a>
+
+<div class="dashboard-page">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">
+        <div class="mark">E</div>
+        <div class="name">Edu<span>Core</span></div>
+      </div>
+      <div class="sidebar-user">
+        <div class="user-name">Mr. Suresh Patel</div>
+        <div class="user-role">Accountant / Office Staff</div>
+        <div class="user-school">Green Valley International</div>
+      </div>
+    </div>
+    
+    <nav class="sidebar-nav">
+      <div class="nav-section">
+        <div class="nav-section-title">Main</div>
+        <a class="nav-item active"><span class="nav-icon">📊</span> Dashboard</a>
+        <a class="nav-item"><span class="nav-icon">📅</span> My Schedule</a>
+        <a class="nav-item"><span class="nav-icon">✅</span> My Attendance</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-title">Finance</div>
+        <a class="nav-item"><span class="nav-icon">💰</span> Fee Collection <span class="nav-badge badge-red">8</span></a>
+        <a class="nav-item"><span class="nav-icon">📄</span> Invoices</a>
+        <a class="nav-item"><span class="nav-icon">💳</span> Payments</a>
+        <a class="nav-item"><span class="nav-icon">📊</span> Expense Reports</a>
+        <a class="nav-item"><span class="nav-icon">🧾</span> Salary Records</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-title">Operations</div>
+        <a class="nav-item"><span class="nav-icon">📦</span> Inventory</a>
+        <a class="nav-item"><span class="nav-icon">🚌</span> Transport</a>
+        <a class="nav-item"><span class="nav-icon">🏠</span> Hostel</a>
+        <a class="nav-item"><span class="nav-icon">📚</span> Library</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-title">HR</div>
+        <a class="nav-item"><span class="nav-icon">📆</span> Leave Requests <span class="nav-badge badge-gold">3</span></a>
+        <a class="nav-item"><span class="nav-icon">🎫</span> Tickets</a>
+        <a class="nav-item"><span class="nav-icon">👤</span> My Profile</a>
+      </div>
+    </nav>
+    
+    <div class="sidebar-footer">
+      <button class="logout-btn" onclick="window.location.href='staff-login.html'">
+        <span>⏻</span> Sign Out
+      </button>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-content">
+    <div class="topbar">
+      <div class="topbar-title">Staff Dashboard</div>
+      <div class="topbar-right">
+        <div class="topbar-btn">🔔<span class="notif-dot"></span></div>
+        <div class="topbar-btn">💬</div>
+        <div class="topbar-avatar">SP</div>
+      </div>
+    </div>
+
+    <div class="content fade-in">
+      <!-- Stats -->
+      <div class="stats-grid">
+        <div class="stat-card gold">
+          <div class="stat-icon">💰</div>
+          <div class="stat-label">Today's Collection</div>
+          <div class="stat-value gold">$4,850</div>
+          <div class="stat-sub">18 transactions</div>
+        </div>
+        <div class="stat-card green">
+          <div class="stat-icon">✅</div>
+          <div class="stat-label">Fees Collected (MTD)</div>
+          <div class="stat-value green">$48,320</div>
+          <div class="stat-sub">72% of target</div>
+        </div>
+        <div class="stat-card red">
+          <div class="stat-icon">⚠️</div>
+          <div class="stat-label">Overdue Payments</div>
+          <div class="stat-value red">$12,840</div>
+          <div class="stat-sub">34 students</div>
+        </div>
+        <div class="stat-card blue">
+          <div class="stat-icon">📄</div>
+          <div class="stat-label">Pending Invoices</div>
+          <div class="stat-value blue">8</div>
+          <div class="stat-sub">To be processed</div>
+        </div>
+        <div class="stat-card purple">
+          <div class="stat-icon">🎫</div>
+          <div class="stat-label">Open Tickets</div>
+          <div class="stat-value purple">5</div>
+          <div class="stat-sub">2 high priority</div>
+        </div>
+      </div>
+
+      <!-- Main Grid -->
+      <div class="grid-2">
+        <!-- Recent Transactions -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Recent Transactions</div>
+            <span class="badge badge-gold">Today</span>
+          </div>
+          <div class="card-body">
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Student</th><th>Class</th><th>Amount</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td>Rahul Verma</td><td>10A</td><td style="color:var(--green)">$450</td><td><span class="badge badge-green">Paid</span></td></tr>
+                  <tr><td>Sneha Gupta</td><td>9B</td><td style="color:var(--green)">$380</td><td><span class="badge badge-green">Paid</span></td></tr>
+                  <tr><td>Arjun Singh</td><td>8A</td><td style="color:var(--green)">$420</td><td><span class="badge badge-green">Paid</span></td></tr>
+                  <tr><td>Meera Joshi</td><td>10B</td><td style="color:var(--gold)">$450</td><td><span class="badge badge-gold">Partial</span></td></tr>
+                  <tr><td>Kiran Patel</td><td>7A</td><td style="color:var(--red)">$350</td><td><span class="badge badge-red">Overdue</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tasks & Reminders -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Today's Tasks</div>
+            <span class="badge badge-blue">6 tasks</span>
+          </div>
+          <div class="card-body">
+            <ul class="activity-list">
+              <li class="activity-item">
+                <div class="activity-dot" style="background:var(--green)"></div>
+                <div class="activity-content">
+                  <div class="activity-text">Process salary for June month ✓</div>
+                  <div class="activity-time">Completed at 9:30 AM</div>
+                </div>
+              </li>
+              <li class="activity-item">
+                <div class="activity-dot" style="background:var(--green)"></div>
+                <div class="activity-content">
+                  <div class="activity-text">Generate fee reminders for overdue accounts ✓</div>
+                  <div class="activity-time">Completed at 10:00 AM</div>
+                </div>
+              </li>
+              <li class="activity-item">
+                <div class="activity-dot" style="background:var(--gold)"></div>
+                <div class="activity-content">
+                  <div class="activity-text">Update transport fee records for Q2</div>
+                  <div class="activity-time">In Progress</div>
+                </div>
+              </li>
+              <li class="activity-item">
+                <div class="activity-dot" style="background:var(--text3)"></div>
+                <div class="activity-content">
+                  <div class="activity-text">Verify hostel payment receipts</div>
+                  <div class="activity-time">Pending</div>
+                </div>
+              </li>
+              <li class="activity-item">
+                <div class="activity-dot" style="background:var(--text3)"></div>
+                <div class="activity-content">
+                  <div class="activity-text">Submit monthly expense report to Admin</div>
+                  <div class="activity-time">Due by 5:00 PM</div>
+                </div>
+              </li>
+              <li class="activity-item">
+                <div class="activity-dot" style="background:var(--text3)"></div>
+                <div class="activity-content">
+                  <div class="activity-text">Reconcile petty cash ledger</div>
+                  <div class="activity-time">Due by EOD</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Expense & Leave -->
+      <div class="grid-2" style="margin-top:16px">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Monthly Expense Breakdown</div>
+            <span class="badge badge-gold">June 2024</span>
+          </div>
+          <div class="card-body">
+            <div style="margin-bottom:14px">
+              <div style="display:flex;justify-content:space-between;margin-bottom:5px;font-size:13px">
+                <span>Staff Salaries</span><span style="color:var(--accent)">$32,500</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width:65%;background:var(--accent)"></div></div>
+            </div>
+            <div style="margin-bottom:14px">
+              <div style="display:flex;justify-content:space-between;margin-bottom:5px;font-size:13px">
+                <span>Utilities & Maintenance</span><span style="color:var(--green)">$8,200</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width:16%;background:var(--green)"></div></div>
+            </div>
+            <div style="margin-bottom:14px">
+              <div style="display:flex;justify-content:space-between;margin-bottom:5px;font-size:13px">
+                <span>Teaching Materials</span><span style="color:var(--purple)">$4,100</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width:8%;background:var(--purple)"></div></div>
+            </div>
+            <div style="margin-bottom:14px">
+              <div style="display:flex;justify-content:space-between;margin-bottom:5px;font-size:13px">
+                <span>Transport</span><span style="color:var(--gold)">$3,800</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width:7%;background:var(--gold)"></div></div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:5px;font-size:13px">
+                <span>Miscellaneous</span><span style="color:var(--text2)">$1,400</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width:3%;background:var(--text3)"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Quick Actions</div>
+          </div>
+          <div class="card-body">
+            <div class="quick-actions">
+              <div class="quick-action">
+                <div class="quick-action-icon">💳</div>
+                <div class="quick-action-label">Collect Fee</div>
+              </div>
+              <div class="quick-action">
+                <div class="quick-action-icon">📄</div>
+                <div class="quick-action-label">Generate Invoice</div>
+              </div>
+              <div class="quick-action">
+                <div class="quick-action-icon">📊</div>
+                <div class="quick-action-label">Expense Report</div>
+              </div>
+              <div class="quick-action">
+                <div class="quick-action-icon">🧾</div>
+                <div class="quick-action-label">Salary Slip</div>
+              </div>
+              <div class="quick-action">
+                <div class="quick-action-icon">📦</div>
+                <div class="quick-action-label">Inventory</div>
+              </div>
+              <div class="quick-action">
+                <div class="quick-action-icon">📆</div>
+                <div class="quick-action-label">Apply Leave</div>
+              </div>
+            </div>
+
+            <div style="margin-top:20px">
+              <div class="announcement">
+                <div class="announcement-title">📢 Salary Credit Notice</div>
+                <div class="announcement-text">June salaries have been processed and will be credited by June 1st. Please verify your bank details.</div>
+                <div class="announcement-date">Posted today by HR Department</div>
+              </div>
+              <div class="announcement">
+                <div class="announcement-title">🏖️ Holiday Notice</div>
+                <div class="announcement-text">School will remain closed on June 12th on account of annual day preparations.</div>
+                <div class="announcement-date">Posted yesterday by Admin</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+</body>
+</html>
