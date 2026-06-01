@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduCore — Teacher Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/preview-styles.css">
+<style>
+  :root{
+    --role-color:#22c55e;
+    --role-glow:rgba(34,197,94,.15);
+    --role-shadow:rgba(34,197,94,.4);
+  }
+  .sidebar-logo .mark{background:linear-gradient(135deg,#22c55e,#14b8a6)}
+  .topbar-avatar{background:linear-gradient(135deg,#22c55e,#14b8a6)}
+  .nav-item.active{background:rgba(34,197,94,.12);color:var(--green)}
+  .nav-item.active::before{background:var(--green)}
+</style>
+</head>
+<body>
+<a href="index.html" class="back-link">← All Previews</a>
+
+<div class="dashboard-page">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">
+        <div class="mark">E</div>
+        <div class="name">Edu<span>Core</span></div>
+      </div>
+      <div class="sidebar-user">
+        <div class="user-name">Mrs. Anita Desai</div>
+        <div class="user-role">Senior Teacher</div>
+        <div class="user-school">Green Valley International</div>
+      </div>
+    </div>
+    
+    <nav class="sidebar-nav">
+      <div class="nav-section">
+        <div class="nav-section-title">Main</div>
+        <a class="nav-item active"><span class="nav-icon">📊</span> Dashboard</a>
+        <a class="nav-item"><span class="nav-icon">📚</span> My Classes <span class="nav-badge badge-green">5</span></a>
+        <a class="nav-item"><span class="nav-icon">📖</span> My Subjects</a>
+        <a class="nav-item"><span class="nav-icon">📅</span> Timetable</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-title">Academic</div>
+        <a class="nav-item"><span class="nav-icon">✅</span> Attendance</a>
+        <a class="nav-item"><span class="nav-icon">📝</span> Homework <span class="nav-badge badge-gold">3</span></a>
+        <a class="nav-item"><span class="nav-icon">📋</span> Examinations</a>
+        <a class="nav-item"><span class="nav-icon">📊</span> Results & Grades</a>
+        <a class="nav-item"><span class="nav-icon">📄</span> Study Materials</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-title">Communication</div>
+        <a class="nav-item"><span class="nav-icon">💬</span> Messages <span class="nav-badge badge-blue">7</span></a>
+        <a class="nav-item"><span class="nav-icon">📢</span> Announcements</a>
+        <a class="nav-item"><span class="nav-icon">👪</span> Parent Connect</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-title">Personal</div>
+        <a class="nav-item"><span class="nav-icon">📆</span> Leave Requests</a>
+        <a class="nav-item"><span class="nav-icon">👤</span> My Profile</a>
+      </div>
+    </nav>
+    
+    <div class="sidebar-footer">
+      <button class="logout-btn" onclick="window.location.href='teacher-login.html'">
+        <span>⏻</span> Sign Out
+      </button>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-content">
+    <div class="topbar">
+      <div class="topbar-title">Teacher Dashboard</div>
+      <div class="topbar-right">
+        <div class="topbar-btn">🔔<span class="notif-dot"></span></div>
+        <div class="topbar-btn">💬</div>
+        <div class="topbar-avatar">AD</div>
+      </div>
+    </div>
+
+    <div class="content fade-in">
+      <!-- Stats -->
+      <div class="stats-grid">
+        <div class="stat-card green">
+          <div class="stat-icon">📚</div>
+          <div class="stat-label">My Classes</div>
+          <div class="stat-value green">5</div>
+          <div class="stat-sub">Active classes</div>
+        </div>
+        <div class="stat-card blue">
+          <div class="stat-icon">👨‍🎓</div>
+          <div class="stat-label">Total Students</div>
+          <div class="stat-value blue">187</div>
+          <div class="stat-sub">Across all classes</div>
+        </div>
+        <div class="stat-card gold">
+          <div class="stat-icon">📝</div>
+          <div class="stat-label">Pending Homework</div>
+          <div class="stat-value gold">3</div>
+          <div class="stat-sub">To review</div>
+        </div>
+        <div class="stat-card purple">
+          <div class="stat-icon">📋</div>
+          <div class="stat-label">Upcoming Exams</div>
+          <div class="stat-value purple">2</div>
+          <div class="stat-sub">This week</div>
+        </div>
+      </div>
+
+      <!-- Today's Schedule & Attendance -->
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Today's Schedule</div>
+            <span class="badge badge-green">Monday</span>
+          </div>
+          <div class="card-body">
+            <div class="schedule-item">
+              <div class="schedule-time">08:00 AM</div>
+              <div class="schedule-info">
+                <div class="schedule-subject">Mathematics</div>
+                <div class="schedule-detail">Class 10A • Room 301</div>
+              </div>
+            </div>
+            <div class="schedule-item">
+              <div class="schedule-time">09:00 AM</div>
+              <div class="schedule-info">
+                <div class="schedule-subject">Mathematics</div>
+                <div class="schedule-detail">Class 9B • Room 205</div>
+              </div>
+            </div>
+            <div class="schedule-item">
+              <div class="schedule-time">10:30 AM</div>
+              <div class="schedule-info">
+                <div class="schedule-subject">Advanced Math</div>
+                <div class="schedule-detail">Class 12A • Room 401</div>
+              </div>
+            </div>
+            <div class="schedule-item">
+              <div class="schedule-time">12:00 PM</div>
+              <div class="schedule-info">
+                <div class="schedule-subject">Mathematics</div>
+                <div class="schedule-detail">Class 8A • Room 102</div>
+              </div>
+            </div>
+            <div class="schedule-item">
+              <div class="schedule-time">02:00 PM</div>
+              <div class="schedule-info">
+                <div class="schedule-subject">Statistics</div>
+                <div class="schedule-detail">Class 11B • Room 305</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Attendance Quick Mark -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Attendance Summary (Today)</div>
+            <span class="badge badge-blue">Live</span>
+          </div>
+          <div class="card-body">
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Class</th><th>Present</th><th>Absent</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td>Class 10A</td><td style="color:var(--green)">38</td><td style="color:var(--red)">2</td><td><span class="badge badge-green">Done</span></td></tr>
+                  <tr><td>Class 9B</td><td style="color:var(--green)">35</td><td style="color:var(--red)">3</td><td><span class="badge badge-green">Done</span></td></tr>
+                  <tr><td>Class 12A</td><td style="color:var(--green)">28</td><td style="color:var(--red)">2</td><td><span class="badge badge-green">Done</span></td></tr>
+                  <tr><td>Class 8A</td><td colspan="2" style="color:var(--text3)">—</td><td><span class="badge badge-gold">Pending</span></td></tr>
+                  <tr><td>Class 11B</td><td colspan="2" style="color:var(--text3)">—</td><td><span class="badge badge-gold">Pending</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Homework & Announcements -->
+      <div class="grid-2" style="margin-top:16px">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Recent Homework Submissions</div>
+            <span class="badge badge-gold">3 pending</span>
+          </div>
+          <div class="card-body">
+            <ul class="activity-list">
+              <li class="activity-item">
+                <div class="activity-dot" style="background:var(--green)"></div>
+                <div class="activity-content">
+                  <div class="activity-text"><strong>Class 10A</strong> - Algebra Chapter 5 Exercises</div>
+                  <div class="activity-time">32 of 38 submitted • Due: Today</div>
+                </div>
+              </li>
+              <li class="activity-item">
+                <div class="activity-dot" style="background:var(--gold)"></div>
+                <div class="activity-content">
+                  <div class="activity-text"><strong>Class 9B</strong> - Geometry Practice Set</div>
+                  <div class="activity-time">28 of 38 submitted • Due: Tomorrow</div>
+                </div>
+              </li>
+              <li class="activity-item">
+                <div class="activity-dot" style="background:var(--red)"></div>
+                <div class="activity-content">
+                  <div class="activity-text"><strong>Class 12A</strong> - Calculus Problem Set 3</div>
+                  <div class="activity-time">15 of 30 submitted • Due: Jun 04</div>
+                </div>
+              </li>
+              <li class="activity-item">
+                <div class="activity-dot" style="background:var(--accent)"></div>
+                <div class="activity-content">
+                  <div class="activity-text"><strong>Class 8A</strong> - Basic Equations Worksheet</div>
+                  <div class="activity-time">40 of 40 submitted • Completed ✓</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Quick Actions</div>
+          </div>
+          <div class="card-body">
+            <div class="quick-actions">
+              <div class="quick-action">
+                <div class="quick-action-icon">✅</div>
+                <div class="quick-action-label">Mark Attendance</div>
+              </div>
+              <div class="quick-action">
+                <div class="quick-action-icon">📝</div>
+                <div class="quick-action-label">Assign Homework</div>
+              </div>
+              <div class="quick-action">
+                <div class="quick-action-icon">📊</div>
+                <div class="quick-action-label">Enter Marks</div>
+              </div>
+              <div class="quick-action">
+                <div class="quick-action-icon">📄</div>
+                <div class="quick-action-label">Upload Notes</div>
+              </div>
+              <div class="quick-action">
+                <div class="quick-action-icon">💬</div>
+                <div class="quick-action-label">Message Parent</div>
+              </div>
+              <div class="quick-action">
+                <div class="quick-action-icon">📆</div>
+                <div class="quick-action-label">Apply Leave</div>
+              </div>
+            </div>
+            
+            <div style="margin-top:20px">
+              <div class="announcement">
+                <div class="announcement-title">📢 Staff Meeting Reminder</div>
+                <div class="announcement-text">All teachers are requested to attend the staff meeting at 4:00 PM today in the conference hall.</div>
+                <div class="announcement-date">Posted 2 hours ago by Admin</div>
+              </div>
+              <div class="announcement">
+                <div class="announcement-title">📋 Mid-Term Exam Papers Submission</div>
+                <div class="announcement-text">Please submit question papers for mid-term exams by June 3rd.</div>
+                <div class="announcement-date">Posted yesterday by Exam Coordinator</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+</body>
+</html>

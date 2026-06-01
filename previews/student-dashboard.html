@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduCore — Student Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/preview-styles.css">
+<style>
+  :root{
+    --role-color:#a78bfa;
+    --role-glow:rgba(167,139,250,.15);
+    --role-shadow:rgba(167,139,250,.4);
+  }
+  .sidebar-logo .mark{background:linear-gradient(135deg,#a78bfa,#ec4899)}
+  .topbar-avatar{background:linear-gradient(135deg,#a78bfa,#ec4899)}
+  .nav-item.active{background:rgba(167,139,250,.12);color:var(--purple)}
+  .nav-item.active::before{background:var(--purple)}
+
+  .grade-card{
+    background:var(--bg2);border:1px solid var(--border2);border-radius:8px;
+    padding:14px;text-align:center;
+  }
+  .grade-subject{font-size:12px;color:var(--text3);margin-bottom:4px}
+  .grade-value{font-size:24px;font-weight:800;letter-spacing:-.3px}
+  .grade-label{font-size:11px;margin-top:4px;font-weight:600}
+</style>
+</head>
+<body>
+<a href="index.html" class="back-link">← All Previews</a>
+
+<div class="dashboard-page">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">
+        <div class="mark">E</div>
+        <div class="name">Edu<span>Core</span></div>
+      </div>
+      <div class="sidebar-user">
+        <div class="user-name">Priya Sharma</div>
+        <div class="user-role">Student — Class 10A</div>
+        <div class="user-school">Green Valley International</div>
+      </div>
+    </div>
+    
+    <nav class="sidebar-nav">
+      <div class="nav-section">
+        <div class="nav-section-title">Main</div>
+        <a class="nav-item active"><span class="nav-icon">📊</span> Dashboard</a>
+        <a class="nav-item"><span class="nav-icon">📅</span> My Timetable</a>
+        <a class="nav-item"><span class="nav-icon">📚</span> My Subjects</a>
+        <a class="nav-item"><span class="nav-icon">✅</span> Attendance</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-title">Academic</div>
+        <a class="nav-item"><span class="nav-icon">📝</span> Homework <span class="nav-badge badge-gold">4</span></a>
+        <a class="nav-item"><span class="nav-icon">📋</span> Exams & Results</a>
+        <a class="nav-item"><span class="nav-icon">📄</span> Study Materials</a>
+        <a class="nav-item"><span class="nav-icon">📖</span> Library</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-title">Finance</div>
+        <a class="nav-item"><span class="nav-icon">💰</span> Fee Status <span class="nav-badge badge-green">Paid</span></a>
+        <a class="nav-item"><span class="nav-icon">📄</span> Receipts</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-title">Others</div>
+        <a class="nav-item"><span class="nav-icon">🚌</span> Transport</a>
+        <a class="nav-item"><span class="nav-icon">📢</span> Notices <span class="nav-badge badge-blue">2</span></a>
+        <a class="nav-item"><span class="nav-icon">💬</span> Messages</a>
+        <a class="nav-item"><span class="nav-icon">👤</span> My Profile</a>
+      </div>
+    </nav>
+    
+    <div class="sidebar-footer">
+      <button class="logout-btn" onclick="window.location.href='student-login.html'">
+        <span>⏻</span> Sign Out
+      </button>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-content">
+    <div class="topbar">
+      <div class="topbar-title">Student Dashboard</div>
+      <div class="topbar-right">
+        <div class="topbar-btn">🔔<span class="notif-dot"></span></div>
+        <div class="topbar-btn">💬</div>
+        <div class="topbar-avatar">PS</div>
+      </div>
+    </div>
+
+    <div class="content fade-in">
+      <!-- Stats -->
+      <div class="stats-grid">
+        <div class="stat-card purple">
+          <div class="stat-icon">📊</div>
+          <div class="stat-label">Overall Grade</div>
+          <div class="stat-value purple">A+</div>
+          <div class="stat-sub">92.4% average</div>
+        </div>
+        <div class="stat-card green">
+          <div class="stat-icon">✅</div>
+          <div class="stat-label">Attendance</div>
+          <div class="stat-value green">96%</div>
+          <div class="stat-sub">This semester</div>
+        </div>
+        <div class="stat-card gold">
+          <div class="stat-icon">📝</div>
+          <div class="stat-label">Pending Homework</div>
+          <div class="stat-value gold">4</div>
+          <div class="stat-sub">2 due tomorrow</div>
+        </div>
+        <div class="stat-card blue">
+          <div class="stat-icon">📋</div>
+          <div class="stat-label">Upcoming Exams</div>
+          <div class="stat-value blue">3</div>
+          <div class="stat-sub">Starts Jun 05</div>
+        </div>
+      </div>
+
+      <!-- Today's Classes & Grades -->
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Today's Classes</div>
+            <span class="badge badge-purple">Monday</span>
+          </div>
+          <div class="card-body">
+            <div class="schedule-item">
+              <div class="schedule-time">08:00 AM</div>
+              <div class="schedule-info">
+                <div class="schedule-subject">Mathematics</div>
+                <div class="schedule-detail">Mrs. Anita Desai • Room 301</div>
+              </div>
+            </div>
+            <div class="schedule-item">
+              <div class="schedule-time">09:00 AM</div>
+              <div class="schedule-info">
+                <div class="schedule-subject">Physics</div>
+                <div class="schedule-detail">Mr. Rajesh Kumar • Lab 2</div>
+              </div>
+            </div>
+            <div class="schedule-item">
+              <div class="schedule-time">10:30 AM</div>
+              <div class="schedule-info">
+                <div class="schedule-subject">English Literature</div>
+                <div class="schedule-detail">Ms. Sarah Johnson • Room 204</div>
+              </div>
+            </div>
+            <div class="schedule-item">
+              <div class="schedule-time">12:00 PM</div>
+              <div class="schedule-info">
+                <div class="schedule-subject">Chemistry</div>
+                <div class="schedule-detail">Dr. Arun Mehta • Lab 1</div>
+              </div>
+            </div>
+            <div class="schedule-item">
+              <div class="schedule-time">02:00 PM</div>
+              <div class="schedule-info">
+                <div class="schedule-subject">Computer Science</div>
+                <div class="schedule-detail">Mr. Vikram Shah • CS Lab</div>
+              </div>
+            </div>
+            <div class="schedule-item">
+              <div class="schedule-time">03:00 PM</div>
+              <div class="schedule-info">
+                <div class="schedule-subject">Physical Education</div>
+                <div class="schedule-detail">Mr. Sunil Roy • Sports Field</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Grades -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Recent Grades</div>
+            <span class="badge badge-green">Unit Test 3</span>
+          </div>
+          <div class="card-body">
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px">
+              <div class="grade-card">
+                <div class="grade-subject">Mathematics</div>
+                <div class="grade-value" style="color:var(--green)">95</div>
+                <div class="grade-label badge badge-green">A+</div>
+              </div>
+              <div class="grade-card">
+                <div class="grade-subject">Physics</div>
+                <div class="grade-value" style="color:var(--accent)">88</div>
+                <div class="grade-label badge badge-blue">A</div>
+              </div>
+              <div class="grade-card">
+                <div class="grade-subject">Chemistry</div>
+                <div class="grade-value" style="color:var(--green)">92</div>
+                <div class="grade-label badge badge-green">A+</div>
+              </div>
+              <div class="grade-card">
+                <div class="grade-subject">English</div>
+                <div class="grade-value" style="color:var(--accent)">86</div>
+                <div class="grade-label badge badge-blue">A</div>
+              </div>
+              <div class="grade-card">
+                <div class="grade-subject">Computer Sc.</div>
+                <div class="grade-value" style="color:var(--green)">97</div>
+                <div class="grade-label badge badge-green">A+</div>
+              </div>
+              <div class="grade-card">
+                <div class="grade-subject">Hindi</div>
+                <div class="grade-value" style="color:var(--gold)">78</div>
+                <div class="grade-label badge badge-gold">B+</div>
+              </div>
+            </div>
+
+            <div style="background:var(--bg2);border-radius:8px;padding:14px;display:flex;justify-content:space-between;align-items:center">
+              <div>
+                <div style="font-size:13px;color:var(--text3)">Class Rank</div>
+                <div style="font-size:20px;font-weight:800;color:var(--purple)">#3 <span style="font-size:12px;color:var(--text3);font-weight:400">of 40</span></div>
+              </div>
+              <div>
+                <div style="font-size:13px;color:var(--text3)">Percentage</div>
+                <div style="font-size:20px;font-weight:800;color:var(--green)">92.4%</div>
+              </div>
+              <div>
+                <div style="font-size:13px;color:var(--text3)">Grade</div>
+                <div style="font-size:20px;font-weight:800;color:var(--purple)">A+</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Homework & Notices -->
+      <div class="grid-2" style="margin-top:16px">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Pending Homework</div>
+            <span class="badge badge-gold">4 pending</span>
+          </div>
+          <div class="card-body">
+            <ul class="activity-list">
+              <li class="activity-item">
+                <div class="activity-dot" style="background:var(--red)"></div>
+                <div class="activity-content">
+                  <div class="activity-text"><strong>Mathematics</strong> — Algebra Chapter 5 Exercises</div>
+                  <div class="activity-time">Due: Tomorrow, Jun 02 • Mrs. Anita Desai</div>
+                </div>
+              </li>
+              <li class="activity-item">
+                <div class="activity-dot" style="background:var(--red)"></div>
+                <div class="activity-content">
+                  <div class="activity-text"><strong>Physics</strong> — Optics Numerical Problems</div>
+                  <div class="activity-time">Due: Tomorrow, Jun 02 • Mr. Rajesh Kumar</div>
+                </div>
+              </li>
+              <li class="activity-item">
+                <div class="activity-dot" style="background:var(--gold)"></div>
+                <div class="activity-content">
+                  <div class="activity-text"><strong>English</strong> — Essay on Climate Change</div>
+                  <div class="activity-time">Due: Jun 04 • Ms. Sarah Johnson</div>
+                </div>
+              </li>
+              <li class="activity-item">
+                <div class="activity-dot" style="background:var(--accent)"></div>
+                <div class="activity-content">
+                  <div class="activity-text"><strong>Computer Science</strong> — Python Project Submission</div>
+                  <div class="activity-time">Due: Jun 06 • Mr. Vikram Shah</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Notices & Announcements</div>
+          </div>
+          <div class="card-body">
+            <div class="announcement">
+              <div class="announcement-title">📋 Mid-Term Exam Schedule Released</div>
+              <div class="announcement-text">Mid-term examinations will start from June 5th. Check the full schedule in the Exams section.</div>
+              <div class="announcement-date">Posted 1 hour ago</div>
+            </div>
+            <div class="announcement">
+              <div class="announcement-title">🏆 Science Fair Registration Open</div>
+              <div class="announcement-text">Register for the annual science fair by June 8th. Teams of 2-3 students allowed.</div>
+              <div class="announcement-date">Posted yesterday</div>
+            </div>
+            <div class="announcement">
+              <div class="announcement-title">🚌 Transport Route Change</div>
+              <div class="announcement-text">Route 4B timing changed to 7:15 AM from next week. Contact transport office for details.</div>
+              <div class="announcement-date">Posted 2 days ago</div>
+            </div>
+
+            <div style="margin-top:20px">
+              <div class="quick-actions" style="grid-template-columns:repeat(3,1fr)">
+                <div class="quick-action">
+                  <div class="quick-action-icon">📝</div>
+                  <div class="quick-action-label">Submit HW</div>
+                </div>
+                <div class="quick-action">
+                  <div class="quick-action-icon">📄</div>
+                  <div class="quick-action-label">Downloads</div>
+                </div>
+                <div class="quick-action">
+                  <div class="quick-action-icon">💬</div>
+                  <div class="quick-action-label">Ask Teacher</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Attendance Chart -->
+      <div class="card" style="margin-top:16px">
+        <div class="card-header">
+          <div class="card-title">Attendance This Month</div>
+          <span class="badge badge-green">96% Overall</span>
+        </div>
+        <div class="card-body">
+          <div style="display:flex;gap:6px;flex-wrap:wrap">
+            <div style="width:36px;height:36px;border-radius:6px;background:rgba(34,197,94,.2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--green)" title="Jun 1 - Present">1</div>
+            <div style="width:36px;height:36px;border-radius:6px;background:rgba(34,197,94,.2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--green)" title="Jun 2 - Present">2</div>
+            <div style="width:36px;height:36px;border-radius:6px;background:rgba(34,197,94,.2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--green)" title="Jun 3 - Present">3</div>
+            <div style="width:36px;height:36px;border-radius:6px;background:rgba(34,197,94,.2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--green)" title="Jun 4 - Present">4</div>
+            <div style="width:36px;height:36px;border-radius:6px;background:rgba(34,197,94,.2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--green)" title="Jun 5 - Present">5</div>
+            <div style="width:36px;height:36px;border-radius:6px;background:rgba(255,255,255,.05);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--text3)" title="Jun 6 - Weekend">6</div>
+            <div style="width:36px;height:36px;border-radius:6px;background:rgba(255,255,255,.05);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--text3)" title="Jun 7 - Weekend">7</div>
+            <div style="width:36px;height:36px;border-radius:6px;background:rgba(34,197,94,.2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--green)" title="Jun 8 - Present">8</div>
+            <div style="width:36px;height:36px;border-radius:6px;background:rgba(34,197,94,.2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--green)" title="Jun 9 - Present">9</div>
+            <div style="width:36px;height:36px;border-radius:6px;background:rgba(244,63,94,.2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--red)" title="Jun 10 - Absent">10</div>
+            <div style="width:36px;height:36px;border-radius:6px;background:rgba(34,197,94,.2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--green)" title="Jun 11 - Present">11</div>
+            <div style="width:36px;height:36px;border-radius:6px;background:rgba(34,197,94,.2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--green)" title="Jun 12 - Present">12</div>
+            <div style="width:36px;height:36px;border-radius:6px;background:rgba(34,197,94,.2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--green)" title="Jun 13 - Present">13</div>
+            <div style="width:36px;height:36px;border-radius:6px;background:rgba(255,255,255,.05);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--text3)" title="Jun 14 - Weekend">14</div>
+            <div style="width:36px;height:36px;border-radius:6px;background:rgba(255,255,255,.05);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--text3)" title="Jun 15 - Weekend">15</div>
+            <div style="width:36px;height:36px;border-radius:6px;background:rgba(34,197,94,.2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--green)" title="Jun 16 - Present">16</div>
+            <div style="width:36px;height:36px;border-radius:6px;background:rgba(34,197,94,.2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--green)" title="Jun 17 - Present">17</div>
+            <div style="width:36px;height:36px;border-radius:6px;background:rgba(34,197,94,.2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--green)" title="Jun 18 - Present">18</div>
+            <div style="width:36px;height:36px;border-radius:6px;background:rgba(34,197,94,.2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--green)" title="Jun 19 - Present">19</div>
+            <div style="width:36px;height:36px;border-radius:6px;background:rgba(34,197,94,.2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--green)" title="Jun 20 - Present">20</div>
+            <div style="width:36px;height:36px;border-radius:6px;background:rgba(255,255,255,.05);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--text3)" title="Jun 21 - Weekend">21</div>
+            <div style="width:36px;height:36px;border-radius:6px;background:rgba(255,255,255,.05);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--text3)" title="Jun 22 - Weekend">22</div>
+            <div style="width:36px;height:36px;border-radius:6px;background:rgba(34,197,94,.2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--green)" title="Jun 23 - Present">23</div>
+            <div style="width:36px;height:36px;border-radius:6px;background:rgba(34,197,94,.2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--green)" title="Jun 24 - Present">24</div>
+            <div style="width:36px;height:36px;border-radius:6px;background:rgba(167,139,250,.2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--purple);border:1px solid var(--purple)" title="Jun 25 - Today">25</div>
+          </div>
+          <div style="display:flex;gap:16px;margin-top:14px;font-size:12px;color:var(--text3)">
+            <span style="display:flex;align-items:center;gap:6px"><span style="width:12px;height:12px;border-radius:3px;background:rgba(34,197,94,.2)"></span> Present</span>
+            <span style="display:flex;align-items:center;gap:6px"><span style="width:12px;height:12px;border-radius:3px;background:rgba(244,63,94,.2)"></span> Absent</span>
+            <span style="display:flex;align-items:center;gap:6px"><span style="width:12px;height:12px;border-radius:3px;background:rgba(255,255,255,.05)"></span> Weekend</span>
+            <span style="display:flex;align-items:center;gap:6px"><span style="width:12px;height:12px;border-radius:3px;background:rgba(167,139,250,.2);border:1px solid var(--purple)"></span> Today</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+</body>
+</html>

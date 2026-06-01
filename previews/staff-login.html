@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduCore — Staff Login</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/preview-styles.css">
+<style>
+  :root{
+    --role-color:#f59e0b;
+    --role-glow:rgba(245,158,11,.15);
+    --role-shadow:rgba(245,158,11,.4);
+  }
+  .logo-mark{background:linear-gradient(135deg,#f59e0b,#f97316)}
+  .login-btn{background:linear-gradient(135deg,#f59e0b,#f97316)}
+  .role-badge{background:rgba(245,158,11,.12);color:var(--gold);border:1px solid rgba(245,158,11,.2)}
+</style>
+</head>
+<body>
+<a href="index.html" class="back-link">← All Previews</a>
+
+<div class="login-page">
+  <div class="login-bg"></div>
+  <div class="login-grid"></div>
+  
+  <div class="login-container fade-in">
+    <div class="login-logo">
+      <div class="logo-mark">E</div>
+      <div class="logo-text">Edu<span>Core</span></div>
+    </div>
+    
+    <div class="login-card">
+      <span class="role-badge">👥 Staff Portal</span>
+      <h2>Staff Sign In</h2>
+      <p class="subtitle">HR, Accounts & Operations Access</p>
+      
+      <div class="field-group">
+        <label>Staff Email / Employee ID</label>
+        <input type="email" placeholder="staff@school.educore.io">
+      </div>
+      
+      <div class="field-group">
+        <label>Password</label>
+        <input type="password" placeholder="Enter your password">
+      </div>
+      
+      <button class="login-btn" onclick="window.location.href='staff-dashboard.html'">Sign In as Staff →</button>
+      
+      <div class="login-extras">
+        <a href="#">Forgot Password?</a>
+        <span>Contact HR for help</span>
+      </div>
+      
+      <div class="demo-credentials">
+        <div class="demo-title">Demo Credentials</div>
+        <div class="demo-box">
+          <div class="demo-row">
+            <span class="demo-key">Email</span>
+            <span class="demo-val">staff@greenvalley.edu</span>
+          </div>
+          <div class="demo-row">
+            <span class="demo-key">Password</span>
+            <span class="demo-val">staff@2024</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="login-footer">
+      Powered by <a href="#">EduCore</a> School Management System
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

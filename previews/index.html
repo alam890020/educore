@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduCore — Role Previews</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0c10;
+  --bg2:#0f1117;
+  --surface:#13161e;
+  --surface2:#1a1d27;
+  --border:#252836;
+  --border2:#2e3244;
+  --accent:#4f8ef7;
+  --green:#22c55e;
+  --gold:#f59e0b;
+  --purple:#a78bfa;
+  --red:#f43f5e;
+  --pink:#ec4899;
+  --teal:#14b8a6;
+  --orange:#f97316;
+  --text:#e8eaf0;
+  --text2:#9197a8;
+  --text3:#5a6070;
+  --radius:12px;
+  --radius-lg:18px;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);
+  min-height:100vh;overflow-x:hidden;
+}
+
+/* Background */
+.page-bg{
+  position:fixed;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 800px 600px at 20% 30%,rgba(79,142,247,.08) 0%,transparent 70%),
+    radial-gradient(ellipse 600px 500px at 80% 70%,rgba(167,139,250,.06) 0%,transparent 70%),
+    radial-gradient(ellipse 500px 400px at 50% 50%,rgba(34,197,94,.04) 0%,transparent 70%);
+}
+.page-grid{
+  position:fixed;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),
+                    linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px);
+  background-size:80px 80px;
+  mask-image:radial-gradient(ellipse 70% 70% at 50% 50%,black 0%,transparent 100%);
+}
+
+/* Container */
+.container{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:60px 24px}
+
+/* Header */
+.header{text-align:center;margin-bottom:60px}
+.header-logo{display:flex;align-items:center;gap:14px;justify-content:center;margin-bottom:24px}
+.logo-mark{
+  width:56px;height:56px;border-radius:15px;
+  background:linear-gradient(135deg,var(--accent),#6366f1);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:26px;color:#fff;
+  box-shadow:0 0 40px rgba(79,142,247,.3);
+}
+.logo-text{font-size:32px;font-weight:800;letter-spacing:-.5px}
+.logo-text span{color:var(--accent)}
+.header h1{font-size:38px;font-weight:800;letter-spacing:-.8px;margin-bottom:12px}
+.header p{font-size:16px;color:var(--text2);max-width:600px;margin:0 auto;line-height:1.7}
+.header-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 18px;border-radius:24px;
+  background:rgba(79,142,247,.08);border:1px solid rgba(79,142,247,.2);
+  color:var(--accent);font-size:13px;font-weight:600;margin-top:20px;
+}
+
+/* Role Grid */
+.roles-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+
+.role-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius-lg);padding:32px;
+  position:relative;overflow:hidden;transition:all .3s ease;
+}
+.role-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  opacity:0;transition:opacity .3s;
+}
+.role-card:hover{
+  border-color:var(--card-color);
+  transform:translateY(-4px);
+  box-shadow:0 12px 40px rgba(0,0,0,.4);
+}
+.role-card:hover::before{opacity:1;background:var(--card-color)}
+
+.role-card-header{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.role-icon{
+  width:52px;height:52px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:24px;flex-shrink:0;
+}
+.role-info h3{font-size:20px;font-weight:700;letter-spacing:-.3px;margin-bottom:3px}
+.role-info p{font-size:13px;color:var(--text3)}
+
+.role-description{
+  font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:24px;
+  min-height:44px;
+}
+
+.role-features{
+  display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;
+}
+.role-feature{
+  font-size:11px;font-weight:600;padding:4px 10px;
+  border-radius:6px;background:rgba(255,255,255,.04);
+  border:1px solid var(--border2);color:var(--text3);
+}
+
+.role-actions{display:flex;gap:10px}
+.role-btn{
+  flex:1;padding:12px 16px;border-radius:10px;
+  font-family:'Outfit',sans-serif;font-weight:600;font-size:14px;
+  cursor:pointer;border:none;text-align:center;
+  text-decoration:none;transition:all .2s;display:block;
+}
+.role-btn-login{
+  background:rgba(255,255,255,.05);border:1px solid var(--border2);color:var(--text2);
+}
+.role-btn-login:hover{border-color:var(--card-color);color:var(--card-color);background:rgba(255,255,255,.08)}
+.role-btn-dashboard{color:#fff}
+.role-btn-dashboard:hover{transform:translateY(-1px);box-shadow:0 4px 16px var(--card-shadow)}
+
+/* Card color variants */
+.role-card.admin{--card-color:#4f8ef7;--card-shadow:rgba(79,142,247,.3)}
+.role-card.admin .role-icon{background:rgba(79,142,247,.12);border:1px solid rgba(79,142,247,.2)}
+.role-card.admin .role-btn-dashboard{background:linear-gradient(135deg,#4f8ef7,#6366f1)}
+
+.role-card.teacher{--card-color:#22c55e;--card-shadow:rgba(34,197,94,.3)}
+.role-card.teacher .role-icon{background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.2)}
+.role-card.teacher .role-btn-dashboard{background:linear-gradient(135deg,#22c55e,#14b8a6)}
+
+.role-card.staff{--card-color:#f59e0b;--card-shadow:rgba(245,158,11,.3)}
+.role-card.staff .role-icon{background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.2)}
+.role-card.staff .role-btn-dashboard{background:linear-gradient(135deg,#f59e0b,#f97316)}
+
+.role-card.student{--card-color:#a78bfa;--card-shadow:rgba(167,139,250,.3)}
+.role-card.student .role-icon{background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.2)}
+.role-card.student .role-btn-dashboard{background:linear-gradient(135deg,#a78bfa,#ec4899)}
+
+/* Footer */
+.footer{
+  text-align:center;margin-top:60px;padding-top:30px;
+  border-top:1px solid var(--border);
+}
+.footer p{font-size:13px;color:var(--text3)}
+.footer a{color:var(--accent);text-decoration:none;font-weight:600}
+.footer a:hover{text-decoration:underline}
+.footer-links{display:flex;justify-content:center;gap:24px;margin-top:12px}
+.footer-links a{font-size:13px;color:var(--text3);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--text)}
+
+/* Responsive */
+@media(max-width:768px){
+  .roles-grid{grid-template-columns:1fr}
+  .header h1{font-size:28px}
+  .container{padding:40px 16px}
+}
+
+/* Animation */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.role-card{animation:fadeUp .4s ease backwards}
+.role-card:nth-child(1){animation-delay:.1s}
+.role-card:nth-child(2){animation-delay:.2s}
+.role-card:nth-child(3){animation-delay:.3s}
+.role-card:nth-child(4){animation-delay:.4s}
+</style>
+</head>
+<body>
+
+<div class="page-bg"></div>
+<div class="page-grid"></div>
+
+<div class="container">
+  <!-- Header -->
+  <div class="header">
+    <div class="header-logo">
+      <div class="logo-mark">E</div>
+      <div class="logo-text">Edu<span>Core</span></div>
+    </div>
+    <h1>Role-Based Preview Pages</h1>
+    <p>Explore the login and dashboard experience for every role in the EduCore School Management System. Each role has its own themed interface and specialized features.</p>
+    <div class="header-badge">🎨 4 Roles • 8 Pages • Dark Theme UI</div>
+  </div>
+
+  <!-- Role Cards -->
+  <div class="roles-grid">
+    <!-- Admin -->
+    <div class="role-card admin">
+      <div class="role-card-header">
+        <div class="role-icon">🛡️</div>
+        <div class="role-info">
+          <h3>Administrator</h3>
+          <p>School Management & Operations</p>
+        </div>
+      </div>
+      <div class="role-description">
+        Full control over school operations including student management, fee collection, staff oversight, reports, and system configuration.
+      </div>
+      <div class="role-features">
+        <span class="role-feature">Student Management</span>
+        <span class="role-feature">Fee Collection</span>
+        <span class="role-feature">Staff Control</span>
+        <span class="role-feature">Reports</span>
+        <span class="role-feature">Timetable</span>
+      </div>
+      <div class="role-actions">
+        <a href="admin-login.html" class="role-btn role-btn-login">Login Preview</a>
+        <a href="admin-dashboard.html" class="role-btn role-btn-dashboard">Dashboard Preview</a>
+      </div>
+    </div>
+
+    <!-- Teacher -->
+    <div class="role-card teacher">
+      <div class="role-card-header">
+        <div class="role-icon">👨‍🏫</div>
+        <div class="role-info">
+          <h3>Teacher</h3>
+          <p>Class & Academic Management</p>
+        </div>
+      </div>
+      <div class="role-description">
+        Manage classes, take attendance, assign homework, upload study materials, enter grades, and communicate with students and parents.
+      </div>
+      <div class="role-features">
+        <span class="role-feature">Attendance</span>
+        <span class="role-feature">Homework</span>
+        <span class="role-feature">Exams & Grades</span>
+        <span class="role-feature">Study Materials</span>
+        <span class="role-feature">Messages</span>
+      </div>
+      <div class="role-actions">
+        <a href="teacher-login.html" class="role-btn role-btn-login">Login Preview</a>
+        <a href="teacher-dashboard.html" class="role-btn role-btn-dashboard">Dashboard Preview</a>
+      </div>
+    </div>
+
+    <!-- Staff -->
+    <div class="role-card staff">
+      <div class="role-card-header">
+        <div class="role-icon">👥</div>
+        <div class="role-info">
+          <h3>Staff</h3>
+          <p>Finance, HR & Operations</p>
+        </div>
+      </div>
+      <div class="role-description">
+        Handle fee collection, invoice generation, expense reports, salary management, inventory tracking, transport, and hostel operations.
+      </div>
+      <div class="role-features">
+        <span class="role-feature">Fee Collection</span>
+        <span class="role-feature">Invoices</span>
+        <span class="role-feature">Salary Records</span>
+        <span class="role-feature">Expenses</span>
+        <span class="role-feature">Inventory</span>
+      </div>
+      <div class="role-actions">
+        <a href="staff-login.html" class="role-btn role-btn-login">Login Preview</a>
+        <a href="staff-dashboard.html" class="role-btn role-btn-dashboard">Dashboard Preview</a>
+      </div>
+    </div>
+
+    <!-- Student -->
+    <div class="role-card student">
+      <div class="role-card-header">
+        <div class="role-icon">🎓</div>
+        <div class="role-info">
+          <h3>Student</h3>
+          <p>Academic & Personal Portal</p>
+        </div>
+      </div>
+      <div class="role-description">
+        View class schedule, check grades, submit homework, track attendance, access study materials, and stay updated with school notices.
+      </div>
+      <div class="role-features">
+        <span class="role-feature">Timetable</span>
+        <span class="role-feature">Grades & Results</span>
+        <span class="role-feature">Homework</span>
+        <span class="role-feature">Attendance</span>
+        <span class="role-feature">Notices</span>
+      </div>
+      <div class="role-actions">
+        <a href="student-login.html" class="role-btn role-btn-login">Login Preview</a>
+        <a href="student-dashboard.html" class="role-btn role-btn-dashboard">Dashboard Preview</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>Built with <a href="../index.html">EduCore</a> School Management System</p>
+    <div class="footer-links">
+      <a href="../index.html">← Back to Main App</a>
+      <a href="#">Documentation</a>
+      <a href="#">GitHub</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
