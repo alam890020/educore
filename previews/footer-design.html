@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guidance Modern Academy — Footer Design</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Outfit',sans-serif;background:#f8f9fc;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end}
+
+/* ═══════════════════════════════════════════
+   FOOTER — Guidance Modern Academy
+   Nursery to Class 4 | School Website
+═══════════════════════════════════════════ */
+
+.footer{
+  background:linear-gradient(180deg,#1e293b 0%,#0f172a 100%);
+  color:#e2e8f0;
+  position:relative;
+  overflow:hidden;
+}
+
+/* Decorative top wave */
+.footer-wave{
+  position:absolute;top:-2px;left:0;right:0;
+  height:60px;overflow:hidden;
+}
+.footer-wave svg{
+  position:absolute;bottom:0;width:100%;height:60px;
+}
+
+/* Decorative dots pattern */
+.footer-dots{
+  position:absolute;top:40px;right:40px;
+  width:120px;height:120px;
+  background-image:radial-gradient(circle,rgba(255,255,255,.06) 1px,transparent 1px);
+  background-size:12px 12px;
+  border-radius:50%;
+  opacity:.5;
+}
+
+/* Top colored bar */
+.footer-top-bar{
+  height:4px;
+  background:linear-gradient(90deg,#3b82f6,#8b5cf6,#ec4899,#f59e0b,#22c55e,#3b82f6);
+  background-size:200% 100%;
+  animation:gradientMove 6s linear infinite;
+}
+@keyframes gradientMove{0%{background-position:0% 0}100%{background-position:200% 0}}
+
+/* Main footer content */
+.footer-main{
+  padding:60px 40px 40px;
+  max-width:1200px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr 1.2fr;
+  gap:40px;
+  position:relative;
+  z-index:1;
+}
+
+/* School Info Column */
+.footer-brand{}
+.footer-logo{
+  display:flex;align-items:center;gap:14px;margin-bottom:20px;
+}
+.footer-logo-icon{
+  width:54px;height:54px;border-radius:14px;
+  background:linear-gradient(135deg,#3b82f6,#8b5cf6);
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;color:#fff;font-weight:800;
+  box-shadow:0 4px 16px rgba(59,130,246,.3);
+}
+.footer-logo-text{
+  font-size:20px;font-weight:800;color:#fff;line-height:1.2;
+}
+.footer-logo-text span{
+  display:block;font-size:11px;font-weight:500;
+  color:#94a3b8;letter-spacing:.5px;text-transform:uppercase;margin-top:2px;
+}
+
+.footer-desc{
+  font-size:14px;color:#94a3b8;line-height:1.8;margin-bottom:20px;
+  max-width:320px;
+}
+
+.footer-contact-item{
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:10px;font-size:13px;color:#cbd5e1;
+}
+.footer-contact-item i{
+  width:28px;height:28px;border-radius:6px;
+  background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;color:#60a5fa;
+}
+
+/* Links Columns */
+.footer-col h4{
+  font-size:14px;font-weight:700;color:#fff;
+  text-transform:uppercase;letter-spacing:.08em;
+  margin-bottom:18px;position:relative;padding-bottom:10px;
+}
+.footer-col h4::after{
+  content:'';position:absolute;bottom:0;left:0;
+  width:30px;height:3px;border-radius:2px;
+  background:linear-gradient(90deg,#3b82f6,#8b5cf6);
+}
+
+.footer-links{list-style:none}
+.footer-links li{margin-bottom:10px}
+.footer-links a{
+  font-size:14px;color:#94a3b8;text-decoration:none;
+  transition:all .2s;display:flex;align-items:center;gap:8px;
+}
+.footer-links a::before{
+  content:'';width:4px;height:4px;border-radius:50%;
+  background:#475569;transition:background .2s;
+}
+.footer-links a:hover{color:#60a5fa;transform:translateX(4px)}
+.footer-links a:hover::before{background:#60a5fa}
+
+/* Newsletter / CTA Column */
+.footer-cta{}
+.footer-cta h4{
+  font-size:14px;font-weight:700;color:#fff;
+  text-transform:uppercase;letter-spacing:.08em;
+  margin-bottom:18px;position:relative;padding-bottom:10px;
+}
+.footer-cta h4::after{
+  content:'';position:absolute;bottom:0;left:0;
+  width:30px;height:3px;border-radius:2px;
+  background:linear-gradient(90deg,#3b82f6,#8b5cf6);
+}
+.footer-cta p{font-size:13px;color:#94a3b8;margin-bottom:16px;line-height:1.7}
+
+.footer-form{display:flex;gap:8px;margin-bottom:20px}
+.footer-form input{
+  flex:1;padding:10px 14px;border-radius:8px;border:1px solid #334155;
+  background:#1e293b;color:#e2e8f0;font-family:'Outfit',sans-serif;
+  font-size:13px;outline:none;transition:border .2s;
+}
+.footer-form input::placeholder{color:#64748b}
+.footer-form input:focus{border-color:#3b82f6}
+.footer-form button{
+  padding:10px 18px;border-radius:8px;border:none;
+  background:linear-gradient(135deg,#3b82f6,#8b5cf6);
+  color:#fff;font-family:'Outfit',sans-serif;font-weight:600;
+  font-size:13px;cursor:pointer;transition:all .2s;white-space:nowrap;
+}
+.footer-form button:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(59,130,246,.3)}
+
+/* School Hours */
+.school-hours{
+  background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.15);
+  border-radius:10px;padding:14px 16px;
+}
+.school-hours-title{font-size:11px;font-weight:700;color:#60a5fa;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+.school-hours-row{display:flex;justify-content:space-between;font-size:13px;padding:4px 0}
+.school-hours-row .day{color:#94a3b8}
+.school-hours-row .time{color:#cbd5e1;font-weight:600}
+
+/* Social Links */
+.footer-social{
+  display:flex;gap:10px;margin-top:16px;
+}
+.footer-social a{
+  width:36px;height:36px;border-radius:8px;
+  background:rgba(255,255,255,.05);border:1px solid #334155;
+  display:flex;align-items:center;justify-content:center;
+  color:#94a3b8;font-size:15px;text-decoration:none;
+  transition:all .2s;
+}
+.footer-social a:hover{
+  background:rgba(59,130,246,.15);border-color:rgba(59,130,246,.3);
+  color:#60a5fa;transform:translateY(-2px);
+}
+
+/* Bottom bar */
+.footer-bottom{
+  border-top:1px solid #1e293b;
+  padding:20px 40px;
+  max-width:1200px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:12px;
+}
+.footer-copyright{font-size:13px;color:#64748b}
+.footer-copyright a{color:#60a5fa;text-decoration:none}
+.footer-bottom-links{display:flex;gap:20px}
+.footer-bottom-links a{font-size:12px;color:#64748b;text-decoration:none;transition:color .2s}
+.footer-bottom-links a:hover{color:#cbd5e1}
+
+/* Kids-friendly decorative elements */
+.footer-kids{
+  display:flex;gap:8px;align-items:center;
+  margin-top:14px;
+}
+.footer-kids span{
+  font-size:18px;
+  animation:bounce 2s ease-in-out infinite;
+}
+.footer-kids span:nth-child(2){animation-delay:.2s}
+.footer-kids span:nth-child(3){animation-delay:.4s}
+.footer-kids span:nth-child(4){animation-delay:.6s}
+.footer-kids span:nth-child(5){animation-delay:.8s}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+
+/* Responsive */
+@media(max-width:900px){
+  .footer-main{grid-template-columns:1fr 1fr;gap:30px}
+}
+@media(max-width:600px){
+  .footer-main{grid-template-columns:1fr;gap:30px;padding:40px 20px 30px}
+  .footer-bottom{padding:16px 20px;flex-direction:column;text-align:center}
+  .footer-bottom-links{justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<!-- Sample content above footer -->
+<div style="padding:60px 40px;text-align:center">
+  <h1 style="font-size:28px;color:#1e293b;margin-bottom:12px">🏫 Guidance Modern Academy</h1>
+  <p style="color:#64748b;font-size:16px">Footer Design Preview — Scroll down to see the footer</p>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER START — Copy this section
+═══════════════════════════════════════════ -->
+<footer class="footer">
+  <!-- Top Rainbow Bar -->
+  <div class="footer-top-bar"></div>
+  
+  <!-- Decorative dots -->
+  <div class="footer-dots"></div>
+  
+  <!-- Main Footer Content -->
+  <div class="footer-main">
+    
+    <!-- Column 1: School Info -->
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <div class="footer-logo-icon">G</div>
+        <div class="footer-logo-text">
+          Guidance Modern Academy
+          <span>Nursery to Class IV</span>
+        </div>
+      </div>
+      <p class="footer-desc">
+        Nurturing young minds with love, creativity, and modern education. Building a strong foundation for your child's bright future since 2010.
+      </p>
+      <div class="footer-contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>123 Education Lane, City Name, State - 123456</span>
+      </div>
+      <div class="footer-contact-item">
+        <i class="fas fa-phone"></i>
+        <span>+91 98765 43210 / +91 12345 67890</span>
+      </div>
+      <div class="footer-contact-item">
+        <i class="fas fa-envelope"></i>
+        <span>info@guidancemodernacademy.com</span>
+      </div>
+      
+      <!-- Kids-friendly icons -->
+      <div class="footer-kids">
+        <span>📚</span>
+        <span>✏️</span>
+        <span>🎨</span>
+        <span>🌟</span>
+        <span>🎓</span>
+      </div>
+    </div>
+    
+    <!-- Column 2: Quick Links -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Admissions</a></li>
+        <li><a href="#">Academics</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+    
+    <!-- Column 3: Classes -->
+    <div class="footer-col">
+      <h4>Our Classes</h4>
+      <ul class="footer-links">
+        <li><a href="#">Nursery</a></li>
+        <li><a href="#">LKG (Lower KG)</a></li>
+        <li><a href="#">UKG (Upper KG)</a></li>
+        <li><a href="#">Class I</a></li>
+        <li><a href="#">Class II</a></li>
+        <li><a href="#">Class III</a></li>
+        <li><a href="#">Class IV</a></li>
+      </ul>
+    </div>
+    
+    <!-- Column 4: Connect & Hours -->
+    <div class="footer-cta">
+      <h4>Stay Connected</h4>
+      <p>Subscribe to get updates on events, holidays & school activities.</p>
+      
+      <div class="footer-form">
+        <input type="email" placeholder="Parent's email...">
+        <button>Subscribe</button>
+      </div>
+      
+      <!-- School Timing -->
+      <div class="school-hours">
+        <div class="school-hours-title">🕐 School Timings</div>
+        <div class="school-hours-row">
+          <span class="day">Mon – Fri</span>
+          <span class="time">8:00 AM – 2:00 PM</span>
+        </div>
+        <div class="school-hours-row">
+          <span class="day">Saturday</span>
+          <span class="time">8:00 AM – 12:00 PM</span>
+        </div>
+        <div class="school-hours-row">
+          <span class="day">Sunday</span>
+          <span class="time">Closed</span>
+        </div>
+      </div>
+      
+      <!-- Social Media -->
+      <div class="footer-social">
+        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Bottom Bar -->
+  <div class="footer-bottom">
+    <div class="footer-copyright">
+      © 2024 <a href="#">Guidance Modern Academy</a>. All rights reserved.
+    </div>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Sitemap</a>
+    </div>
+  </div>
+</footer>
+<!-- ═══ FOOTER END ═══ -->
+
+</body>
+</html>
