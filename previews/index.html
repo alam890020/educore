@@ -8,23 +8,23 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#0a0c10;
-  --bg2:#0f1117;
-  --surface:#13161e;
-  --surface2:#1a1d27;
-  --border:#252836;
-  --border2:#2e3244;
+  --bg:#f8f9fc;
+  --bg2:#ffffff;
+  --surface:#ffffff;
+  --surface2:#f1f5f9;
+  --border:#e2e8f0;
+  --border2:#cbd5e1;
   --accent:#4f8ef7;
-  --green:#22c55e;
-  --gold:#f59e0b;
-  --purple:#a78bfa;
-  --red:#f43f5e;
-  --pink:#ec4899;
-  --teal:#14b8a6;
-  --orange:#f97316;
-  --text:#e8eaf0;
-  --text2:#9197a8;
-  --text3:#5a6070;
+  --green:#16a34a;
+  --gold:#d97706;
+  --purple:#7c3aed;
+  --red:#dc2626;
+  --pink:#db2777;
+  --teal:#0d9488;
+  --orange:#ea580c;
+  --text:#1e293b;
+  --text2:#475569;
+  --text3:#94a3b8;
   --radius:12px;
   --radius-lg:18px;
 }
@@ -38,14 +38,14 @@ body{
 .page-bg{
   position:fixed;inset:0;pointer-events:none;
   background:
-    radial-gradient(ellipse 800px 600px at 20% 30%,rgba(79,142,247,.08) 0%,transparent 70%),
-    radial-gradient(ellipse 600px 500px at 80% 70%,rgba(167,139,250,.06) 0%,transparent 70%),
-    radial-gradient(ellipse 500px 400px at 50% 50%,rgba(34,197,94,.04) 0%,transparent 70%);
+    radial-gradient(ellipse 800px 600px at 20% 30%,rgba(79,142,247,.04) 0%,transparent 70%),
+    radial-gradient(ellipse 600px 500px at 80% 70%,rgba(124,58,237,.03) 0%,transparent 70%),
+    radial-gradient(ellipse 500px 400px at 50% 50%,rgba(22,163,74,.02) 0%,transparent 70%);
 }
 .page-grid{
   position:fixed;inset:0;pointer-events:none;
-  background-image:linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),
-                    linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px);
+  background-image:linear-gradient(rgba(0,0,0,.02) 1px,transparent 1px),
+                    linear-gradient(90deg,rgba(0,0,0,.02) 1px,transparent 1px);
   background-size:80px 80px;
   mask-image:radial-gradient(ellipse 70% 70% at 50% 50%,black 0%,transparent 100%);
 }
@@ -61,16 +61,16 @@ body{
   background:linear-gradient(135deg,var(--accent),#6366f1);
   display:flex;align-items:center;justify-content:center;
   font-weight:800;font-size:26px;color:#fff;
-  box-shadow:0 0 40px rgba(79,142,247,.3);
+  box-shadow:0 4px 20px rgba(79,142,247,.25);
 }
-.logo-text{font-size:32px;font-weight:800;letter-spacing:-.5px}
+.logo-text{font-size:32px;font-weight:800;letter-spacing:-.5px;color:var(--text)}
 .logo-text span{color:var(--accent)}
-.header h1{font-size:38px;font-weight:800;letter-spacing:-.8px;margin-bottom:12px}
+.header h1{font-size:38px;font-weight:800;letter-spacing:-.8px;margin-bottom:12px;color:var(--text)}
 .header p{font-size:16px;color:var(--text2);max-width:600px;margin:0 auto;line-height:1.7}
 .header-badge{
   display:inline-flex;align-items:center;gap:8px;
   padding:8px 18px;border-radius:24px;
-  background:rgba(79,142,247,.08);border:1px solid rgba(79,142,247,.2);
+  background:rgba(79,142,247,.06);border:1px solid rgba(79,142,247,.15);
   color:var(--accent);font-size:13px;font-weight:600;margin-top:20px;
 }
 
@@ -81,6 +81,7 @@ body{
   background:var(--surface);border:1px solid var(--border);
   border-radius:var(--radius-lg);padding:32px;
   position:relative;overflow:hidden;transition:all .3s ease;
+  box-shadow:0 2px 8px rgba(0,0,0,.03);
 }
 .role-card::before{
   content:'';position:absolute;top:0;left:0;right:0;height:4px;
@@ -89,7 +90,7 @@ body{
 .role-card:hover{
   border-color:var(--card-color);
   transform:translateY(-4px);
-  box-shadow:0 12px 40px rgba(0,0,0,.4);
+  box-shadow:0 12px 40px rgba(0,0,0,.08);
 }
 .role-card:hover::before{opacity:1;background:var(--card-color)}
 
@@ -99,7 +100,7 @@ body{
   display:flex;align-items:center;justify-content:center;
   font-size:24px;flex-shrink:0;
 }
-.role-info h3{font-size:20px;font-weight:700;letter-spacing:-.3px;margin-bottom:3px}
+.role-info h3{font-size:20px;font-weight:700;letter-spacing:-.3px;margin-bottom:3px;color:var(--text)}
 .role-info p{font-size:13px;color:var(--text3)}
 
 .role-description{
@@ -112,8 +113,8 @@ body{
 }
 .role-feature{
   font-size:11px;font-weight:600;padding:4px 10px;
-  border-radius:6px;background:rgba(255,255,255,.04);
-  border:1px solid var(--border2);color:var(--text3);
+  border-radius:6px;background:var(--surface2);
+  border:1px solid var(--border);color:var(--text3);
 }
 
 .role-actions{display:flex;gap:10px}
@@ -124,28 +125,28 @@ body{
   text-decoration:none;transition:all .2s;display:block;
 }
 .role-btn-login{
-  background:rgba(255,255,255,.05);border:1px solid var(--border2);color:var(--text2);
+  background:var(--surface2);border:1px solid var(--border);color:var(--text2);
 }
-.role-btn-login:hover{border-color:var(--card-color);color:var(--card-color);background:rgba(255,255,255,.08)}
+.role-btn-login:hover{border-color:var(--card-color);color:var(--card-color);background:rgba(255,255,255,.8)}
 .role-btn-dashboard{color:#fff}
 .role-btn-dashboard:hover{transform:translateY(-1px);box-shadow:0 4px 16px var(--card-shadow)}
 
 /* Card color variants */
-.role-card.admin{--card-color:#4f8ef7;--card-shadow:rgba(79,142,247,.3)}
-.role-card.admin .role-icon{background:rgba(79,142,247,.12);border:1px solid rgba(79,142,247,.2)}
+.role-card.admin{--card-color:#4f8ef7;--card-shadow:rgba(79,142,247,.25)}
+.role-card.admin .role-icon{background:rgba(79,142,247,.08);border:1px solid rgba(79,142,247,.15)}
 .role-card.admin .role-btn-dashboard{background:linear-gradient(135deg,#4f8ef7,#6366f1)}
 
-.role-card.teacher{--card-color:#22c55e;--card-shadow:rgba(34,197,94,.3)}
-.role-card.teacher .role-icon{background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.2)}
-.role-card.teacher .role-btn-dashboard{background:linear-gradient(135deg,#22c55e,#14b8a6)}
+.role-card.teacher{--card-color:#16a34a;--card-shadow:rgba(22,163,74,.25)}
+.role-card.teacher .role-icon{background:rgba(22,163,74,.08);border:1px solid rgba(22,163,74,.15)}
+.role-card.teacher .role-btn-dashboard{background:linear-gradient(135deg,#16a34a,#0d9488)}
 
-.role-card.staff{--card-color:#f59e0b;--card-shadow:rgba(245,158,11,.3)}
-.role-card.staff .role-icon{background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.2)}
-.role-card.staff .role-btn-dashboard{background:linear-gradient(135deg,#f59e0b,#f97316)}
+.role-card.staff{--card-color:#d97706;--card-shadow:rgba(217,119,6,.25)}
+.role-card.staff .role-icon{background:rgba(217,119,6,.08);border:1px solid rgba(217,119,6,.15)}
+.role-card.staff .role-btn-dashboard{background:linear-gradient(135deg,#d97706,#ea580c)}
 
-.role-card.student{--card-color:#a78bfa;--card-shadow:rgba(167,139,250,.3)}
-.role-card.student .role-icon{background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.2)}
-.role-card.student .role-btn-dashboard{background:linear-gradient(135deg,#a78bfa,#ec4899)}
+.role-card.student{--card-color:#7c3aed;--card-shadow:rgba(124,58,237,.25)}
+.role-card.student .role-icon{background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.15)}
+.role-card.student .role-btn-dashboard{background:linear-gradient(135deg,#7c3aed,#db2777)}
 
 /* Footer */
 .footer{
@@ -189,7 +190,7 @@ body{
     </div>
     <h1>Role-Based Preview Pages</h1>
     <p>Explore the login and dashboard experience for every role in the EduCore School Management System. Each role has its own themed interface and specialized features.</p>
-    <div class="header-badge">🎨 4 Roles • 8 Pages • Dark Theme UI</div>
+    <div class="header-badge">🎨 4 Roles • 8 Pages • Light Theme UI</div>
   </div>
 
   <!-- Role Cards -->
